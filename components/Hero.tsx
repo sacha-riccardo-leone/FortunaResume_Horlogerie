@@ -1,0 +1,236 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { resumeData } from "@/lib/data";
+
+const ease = [0.22, 1, 0.36, 1];
+
+function Dial() {
+  const ticks = Array.from({ length: 60 });
+  const hourRef = useRef<SVGGElement>(null);
+  const minuteRef = useRef<SVGGElement>(null);
+  const secondRef = useRef<SVGGElement>(null);
+
+  useEffect(() => {
+    let raf = 0;
+    const tick = () => {
+      const now = new Date();
+      const s = now.getSeconds() + now.getMilliseconds() / 1000;
+      const m = now.getMinutes() + s / 60;
+      const h = (now.getHours() % 12) + m / 60;
+      secondRef.current?.setAttribute("transform", `rotate(${s * 6} 50 50)`);
+      minuteRef.current?.setAttribute("transform", `rotate(${m * 6} 50 50)`);
+      hourRef.current?.setAttribute("transform", `rotate(${h * 30} 50 50)`);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center gap-5 w-full">
+      <div className="relative aspect-square w-full max-w-[520px]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4, ease }}
+          className="absolute inset-0 rounded-full bg-gradient-to-br from-bone to-platinum shadow-dial case-card"
+        >
+          <div className="absolute inset-4 rounded-full guilloche" />
+          <div className="absolute inset-12 rounded-full border border-onyx/10" />
+          <div className="absolute inset-20 rounded-full border border-onyx/15" />
+
+          {/* Ticks */}
+          <svg
+            className="absolute inset-0 h-full w-full pointer-events-none"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden
+          >
+            {ticks.map((_, i) => {
+              const isMajor = i % 5 === 0;
+              return (
+                <line
+                  key={i}
+                  x1="50"
+                  y1="4"
+                  x2="50"
+                  y2={isMajor ? "8" : "6"}
+                  stroke="#0B0B0B"
+                  strokeOpacity={isMajor ? 1 : 0.35}
+                  strokeWidth={isMajor ? 0.55 : 0.25}
+                  strokeLinecap="round"
+                  transform={`rotate(${i * 6} 50 50)`}
+                />
+              );
+            })}
+          </svg>
+
+          {/* Center label */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+            <div className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-graphite mb-2">
+              Manufacture Personnelle
+            </div>
+            <div className="font-display italic text-2xl md:text-4xl text-onyx leading-none">
+              Fortuna
+            </div>
+            <div className="font-display text-base md:text-lg text-onyx/80 mt-1 leading-none">
+              Chung
+            </div>
+            <div className="mt-3 h-px w-10 bg-onyx/40" />
+            <div className="mt-3 font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-graphite">
+              Swiss Made
+            </div>
+          </div>
+
+          {/* Live hour · minute · second hands — synced to visitor's local time */}
+          <svg
+            className="absolute inset-0 h-full w-full pointer-events-none"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden
+          >
+            <g ref={hourRef} transform="rotate(0 50 50)">
+              <line
+                x1="50"
+                y1="50"
+                x2="50"
+                y2="28"
+                stroke="#0B0B0B"
+                strokeWidth="1.1"
+                strokeLinecap="round"
+              />
+            </g>
+            <g ref={minuteRef} transform="rotate(0 50 50)">
+              <line
+                x1="50"
+                y1="50"
+                x2="50"
+                y2="17"
+                stroke="#0B0B0B"
+                strokeWidth="0.7"
+                strokeLinecap="round"
+              />
+            </g>
+            <g ref={secondRef} transform="rotate(0 50 50)">
+              <line
+                x1="50"
+                y1="56"
+                x2="50"
+                y2="13"
+                stroke="#0B0B0B"
+                strokeWidth="0.3"
+                strokeLinecap="round"
+              />
+            </g>
+            <circle cx="50" cy="50" r="1.6" fill="#0B0B0B" />
+            <circle cx="50" cy="50" r="0.6" fill="#F3F1EE" />
+          </svg>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+export default function Hero() {
+  const { identity, contact } = resumeData;
+
+  return (
+    <section id="top" className="relative pt-32 sm:pt-36 md:pt-44 pb-20 sm:pb-24">
+      <div className="absolute inset-0 -z-10 paper-grain" aria-hidden />
+
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
+          <div className="lg:col-span-7 order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease }}
+              className="flex items-center gap-4 mb-6"
+            >
+              <span className="h-px w-10 bg-onyx/40" />
+              <span className="font-mono text-[11px] uppercase tracking-[0.4em] text-graphite">
+                Curriculum Vitæ · Réf. 1997 / CH
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1, ease }}
+              className="font-display font-light text-display-xl text-onyx leading-[0.95]"
+            >
+              Le geste.
+              <br />
+              <span className="italic">La précision.</span>
+              <br />
+              Le temps.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.3, ease }}
+              className="mt-10 max-w-xl text-lg text-graphite leading-[1.7]"
+            >
+              <span className="font-display italic text-onyx text-xl">
+                {identity.firstName} {identity.lastName}
+              </span>{" "}
+              — {identity.role.toLowerCase()}, formée au{" "}
+              <em className="font-display italic text-onyx">Pôle Industrie du Locle</em> et
+              expérimentée en manufacture chez{" "}
+              <em className="font-display italic text-onyx">Rolex SA</em>.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mt-12 flex flex-wrap items-center gap-4"
+            >
+              <a
+                href="#parcours"
+                className="inline-flex items-center gap-3 rounded-full bg-onyx text-bone px-6 py-3.5 text-[11px] uppercase tracking-[0.35em] hover:bg-onyx-deep transition"
+              >
+                Découvrir le parcours
+                <span>→</span>
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-3 rounded-full border border-onyx/30 text-onyx px-6 py-3.5 text-[11px] uppercase tracking-[0.35em] hover:bg-onyx hover:text-bone transition"
+              >
+                Prendre contact
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-platinum-line"
+            >
+              {[
+                { k: "Depuis", v: identity.since },
+                { k: "Atelier", v: "La Chaux-de-Fonds" },
+                { k: "Disponibilité", v: identity.availability },
+                { k: "Nationalité", v: identity.nationality },
+              ].map((s) => (
+                <div key={s.k}>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-faint mb-2">
+                    {s.k}
+                  </div>
+                  <div className="font-display text-base md:text-lg text-onyx">{s.v}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8">
+            <Dial />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

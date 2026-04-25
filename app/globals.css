@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bone: #faf8f4;
+  --onyx: #0b0b0b;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bone);
+  color: var(--onyx);
+  font-feature-settings: "liga", "calt", "onum" 1;
+}
+
+::selection {
+  background: #0b0b0b;
+  color: #faf8f4;
+}
+
+/* Guilloché-inspired ambient texture */
+.guilloche {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(11, 11, 11, 0.035) 0, transparent 60%),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(11, 11, 11, 0.025) 0 1px,
+      transparent 1px 14px
+    );
+}
+
+/* Soft paper texture */
+.paper-grain {
+  background-image:
+    linear-gradient(to bottom, rgba(243, 241, 238, 0) 0%, rgba(243, 241, 238, 0.6) 100%),
+    radial-gradient(circle at 1px 1px, rgba(11, 11, 11, 0.05) 1px, transparent 0);
+  background-size: auto, 3px 3px;
+}
+
+.divider-fine {
+  background: linear-gradient(to right, transparent, rgba(11, 11, 11, 0.18) 30%, rgba(11, 11, 11, 0.18) 70%, transparent);
+  height: 1px;
+}
+
+.tick-row {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(11, 11, 11, 0.25) 0 1px,
+    transparent 1px 12px
+  );
+}
+
+/* Card spec */
+.case-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f9f7f3 100%);
+  border: 1px solid rgba(11, 11, 11, 0.06);
+  box-shadow:
+    0 40px 80px -50px rgba(11, 11, 11, 0.3),
+    0 16px 32px -20px rgba(11, 11, 11, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.case-card-dark {
+  background: linear-gradient(180deg, #151514 0%, #0b0b0b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 40px 80px -50px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.link-reveal {
+  position: relative;
+  display: inline-block;
+}
+.link-reveal::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-reveal:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Subtle oscillation animation (balance-wheel breath) */
+@keyframes breathe {
+  0%, 100% { transform: rotate(-0.6deg); }
+  50% { transform: rotate(0.6deg); }
+}
+.breathe {
+  animation: breathe 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.sweep-60 { animation: sweep 60s linear infinite; transform-origin: center; }
