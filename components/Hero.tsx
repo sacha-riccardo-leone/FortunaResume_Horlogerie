@@ -29,16 +29,16 @@ function Dial() {
   }, []);
 
   return (
-    <div className="relative aspect-square w-full max-w-[420px] mx-auto">
+    <div className="relative aspect-square w-full max-w-[640px] mx-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease }}
-        className="absolute inset-0 rounded-full bg-gradient-to-br from-paper to-paper-warm border border-paper-line shadow-[0_30px_70px_-30px_rgba(10,10,10,0.25),0_10px_25px_-12px_rgba(10,10,10,0.1)]"
+        className="absolute inset-0 rounded-full bg-gradient-to-br from-paper to-paper-warm border border-paper-line shadow-[0_40px_90px_-30px_rgba(10,10,10,0.28),0_15px_35px_-12px_rgba(10,10,10,0.12)]"
       >
         <div className="absolute inset-4 rounded-full border border-ink/[0.04]" />
         <div className="absolute inset-12 rounded-full border border-ink/[0.06]" />
-        <div className="absolute inset-20 rounded-full border border-ink/[0.08]" />
+        <div className="absolute inset-24 rounded-full border border-ink/[0.08]" />
 
         {/* Ticks */}
         <svg
@@ -68,18 +68,12 @@ function Dial() {
 
         {/* Center label */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-          <div className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-ink-faint mb-2">
-            Manufacture
-          </div>
-          <div className="font-display text-2xl md:text-3xl text-ink leading-none tracking-tight">
+          <div className="font-display text-3xl md:text-5xl lg:text-6xl text-ink leading-none tracking-tight">
             Fortuna
           </div>
-          <div className="font-display text-base md:text-lg text-ink-muted mt-1 leading-none">
+          <div className="my-4 h-px w-12 bg-ink/40" />
+          <div className="font-display italic text-lg md:text-2xl lg:text-3xl text-ink-muted leading-none">
             Chung
-          </div>
-          <div className="mt-3 h-px w-10 bg-ink/40" />
-          <div className="mt-3 font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-ink-faint">
-            Swiss Made
           </div>
         </div>
 
@@ -153,69 +147,57 @@ export default function Hero() {
         aria-hidden
       />
 
+      <h1 className="sr-only">
+        {identity.firstName} {identity.lastName} — {identity.role}
+      </h1>
+
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-12 gap-6 lg:gap-10 items-center">
           <motion.div {...reveal(0)} className="col-span-12 lg:col-span-2">
             <span className="text-eyebrow uppercase text-ink-faint">{t.hero.eyebrowIndex}</span>
           </motion.div>
 
-          <div className="col-span-12 lg:col-span-7">
-            <motion.h1
-              {...reveal(0.2)}
-              className="font-display font-light text-display-xl text-ink"
-            >
-              {identity.firstName}
-              <br />
-              <span className="italic">{identity.lastName}.</span>
-            </motion.h1>
-
-            <motion.div
-              {...reveal(0.4)}
-              className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end"
-            >
-              <div className="md:col-span-7 max-w-xl">
-                <p className="text-ink-muted text-lg leading-relaxed">
-                  {identity.tagline}.
-                </p>
-                <p className="mt-3 text-sm text-ink-subtle">
-                  {t.hero.locatedIn(city, identity.availability)}
-                </p>
-              </div>
-
-              <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4 md:gap-2 text-sm">
-                <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">
-                    {t.hero.locationLabel}
-                  </div>
-                  <div>{contact.postal}</div>
-                </div>
-                <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">
-                    {t.hero.phoneLabel}
-                  </div>
-                  <a href={`tel:${contact.phone}`} className="link-reveal">
-                    {contact.phoneFormatted}
-                  </a>
-                </div>
-                <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">
-                    {t.hero.emailLabel}
-                  </div>
-                  <a href={`mailto:${contact.email}`} className="link-reveal break-all">
-                    {contact.email}
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, delay: 0.3, ease }}
-            className="col-span-12 lg:col-span-3 flex justify-center lg:justify-end"
+            transition={{ duration: 1.2, delay: 0.15, ease }}
+            className="col-span-12 lg:col-span-6 flex justify-center"
           >
             <Dial />
+          </motion.div>
+
+          <motion.div {...reveal(0.4)} className="col-span-12 lg:col-span-4">
+            <p className="text-ink-muted text-lg leading-relaxed max-w-md">
+              {identity.tagline}.
+            </p>
+            <p className="mt-3 text-sm text-ink-subtle">
+              {t.hero.locatedIn(city, identity.availability)}
+            </p>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-2 text-sm">
+              <div className="border-t border-paper-line pt-3">
+                <div className="text-eyebrow uppercase text-ink-faint mb-1">
+                  {t.hero.locationLabel}
+                </div>
+                <div>{contact.postal}</div>
+              </div>
+              <div className="border-t border-paper-line pt-3">
+                <div className="text-eyebrow uppercase text-ink-faint mb-1">
+                  {t.hero.phoneLabel}
+                </div>
+                <a href={`tel:${contact.phone}`} className="link-reveal">
+                  {contact.phoneFormatted}
+                </a>
+              </div>
+              <div className="border-t border-paper-line pt-3">
+                <div className="text-eyebrow uppercase text-ink-faint mb-1">
+                  {t.hero.emailLabel}
+                </div>
+                <a href={`mailto:${contact.email}`} className="link-reveal break-all">
+                  {contact.email}
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
