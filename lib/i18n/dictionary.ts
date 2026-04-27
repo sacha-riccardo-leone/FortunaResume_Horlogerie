@@ -15,7 +15,7 @@ export type UIDictionary = {
     selectLanguage: string;
   };
   hero: {
-    eyebrowIndex: string; // e.g. "01 — Atelier"
+    eyebrowIndex: string; // e.g. "01 — Profil"
     locationLabel: string;
     phoneLabel: string;
     emailLabel: string;
@@ -78,9 +78,9 @@ export type UIDictionary = {
 
 const fr: UIDictionary = {
   nav: {
-    profil: "Atelier",
-    experience: "Parcours",
-    competences: "Métier",
+    profil: "Profil",
+    experience: "Expérience",
+    competences: "Compétences",
     formation: "Formation",
     contact: "Contact",
     cta: "Prendre contact",
@@ -91,25 +91,25 @@ const fr: UIDictionary = {
     selectLanguage: "Choisir la langue",
   },
   hero: {
-    eyebrowIndex: "01 — Atelier",
-    locationLabel: "Atelier",
+    eyebrowIndex: "01 — Profil",
+    locationLabel: "Lieu",
     phoneLabel: "Téléphone",
     emailLabel: "E-mail",
     locatedIn: (city, availability) =>
       `Basée à ${city}, disponible ${availability}.`,
   },
   about: {
-    eyebrow: "Profil",
+    eyebrow: "Description",
     bornOn: "Née le",
     nationality: "Nationalité",
     availability: "Disponibilité",
   },
   experience: {
-    eyebrow: "Parcours horloger",
+    eyebrow: "Expérience professionnelle",
     achievement: "Réalisation",
   },
   skills: {
-    eyebrow: "Métier — gestes, qualités, outils",
+    eyebrow: "Compétences / Savoir faire, savoir être",
     tools: "Outils numériques",
     admin: "Gestes techniques",
     human: "Qualités professionnelles",
@@ -120,13 +120,13 @@ const fr: UIDictionary = {
   },
   contact: {
     eyebrow: "Contact",
-    headlineLead: "Un atelier à rejoindre, ",
-    headlineEmphasis: "une main supplémentaire.",
+    headlineLead: "À disposition pour échange ",
+    headlineEmphasis: "professionnel.",
     pitch: (availability, postal) =>
-      `Disponible ${availability} pour un atelier exigeant, attachée à la discrétion et à l’excellence. Échange initial sous 48 heures — ${postal}, Suisse.`,
+      `Pour toute opportunité administrative, réponse sous 48 heures. Disponibilité ${availability} — ${postal}, Suisse et environs.`,
     emailLabel: "E-mail",
     phoneLabel: "Téléphone",
-    addressLabel: "Atelier",
+    addressLabel: "Adresse",
     cta: "Envoyer un message",
   },
   footer: {
@@ -144,9 +144,9 @@ const fr: UIDictionary = {
     metaLine: (birth, nationality, availability) =>
       `Née le ${birth} · ${nationality} · Disponibilité ${availability}`,
     profileTitle: "Profil",
-    experienceTitle: "Parcours horloger",
+    experienceTitle: "Expérience professionnelle",
     educationTitle: "Formation",
-    skillsTitle: "Métier — gestes, qualités, outils",
+    skillsTitle: "Compétences / Savoir faire, savoir être",
     skillsTools: "Outils",
     skillsAdmin: "Gestes",
     skillsHuman: "Qualités",
@@ -157,9 +157,9 @@ const fr: UIDictionary = {
 
 const en: UIDictionary = {
   nav: {
-    profil: "Workshop",
-    experience: "Career",
-    competences: "Craft",
+    profil: "Profile",
+    experience: "Experience",
+    competences: "Skills",
     formation: "Education",
     contact: "Contact",
     cta: "Get in touch",
@@ -170,25 +170,25 @@ const en: UIDictionary = {
     selectLanguage: "Select language",
   },
   hero: {
-    eyebrowIndex: "01 — Workshop",
-    locationLabel: "Workshop",
+    eyebrowIndex: "01 — Profile",
+    locationLabel: "Location",
     phoneLabel: "Phone",
     emailLabel: "Email",
     locatedIn: (city, availability) =>
       `Based in ${city}, available ${availability}.`,
   },
   about: {
-    eyebrow: "Profile",
+    eyebrow: "Description",
     bornOn: "Born on",
     nationality: "Nationality",
     availability: "Availability",
   },
   experience: {
-    eyebrow: "Watchmaking career",
+    eyebrow: "Professional experience",
     achievement: "Achievement",
   },
   skills: {
-    eyebrow: "Craft — gestures, qualities, tools",
+    eyebrow: "Skills / Know-how & soft skills",
     tools: "Digital tools",
     admin: "Technical gestures",
     human: "Professional qualities",
@@ -199,13 +199,13 @@ const en: UIDictionary = {
   },
   contact: {
     eyebrow: "Contact",
-    headlineLead: "A workshop to join, ",
-    headlineEmphasis: "an extra pair of hands.",
+    headlineLead: "Available for a professional ",
+    headlineEmphasis: "exchange.",
     pitch: (availability, postal) =>
-      `Available ${availability} for a demanding workshop, committed to discretion and excellence. Initial reply within 48 hours — ${postal}, Switzerland.`,
+      `For any administrative opportunity, reply within 48 hours. Availability ${availability} — ${postal}, Switzerland and surroundings.`,
     emailLabel: "Email",
     phoneLabel: "Phone",
-    addressLabel: "Workshop",
+    addressLabel: "Address",
     cta: "Send a message",
   },
   footer: {
@@ -223,9 +223,9 @@ const en: UIDictionary = {
     metaLine: (birth, nationality, availability) =>
       `Born on ${birth} · ${nationality} · Availability ${availability}`,
     profileTitle: "Profile",
-    experienceTitle: "Watchmaking career",
+    experienceTitle: "Professional experience",
     educationTitle: "Education",
-    skillsTitle: "Craft — gestures, qualities, tools",
+    skillsTitle: "Skills / Know-how & soft skills",
     skillsTools: "Tools",
     skillsAdmin: "Gestures",
     skillsHuman: "Qualities",
@@ -236,9 +236,9 @@ const en: UIDictionary = {
 
 const de: UIDictionary = {
   nav: {
-    profil: "Manufaktur",
-    experience: "Werdegang",
-    competences: "Handwerk",
+    profil: "Profil",
+    experience: "Erfahrung",
+    competences: "Kompetenzen",
     formation: "Ausbildung",
     contact: "Kontakt",
     cta: "Kontakt aufnehmen",
@@ -249,25 +249,25 @@ const de: UIDictionary = {
     selectLanguage: "Sprache wählen",
   },
   hero: {
-    eyebrowIndex: "01 — Manufaktur",
-    locationLabel: "Manufaktur",
+    eyebrowIndex: "01 — Profil",
+    locationLabel: "Ort",
     phoneLabel: "Telefon",
     emailLabel: "E-Mail",
     locatedIn: (city, availability) =>
       `Mit Sitz in ${city}, verfügbar ${availability}.`,
   },
   about: {
-    eyebrow: "Profil",
+    eyebrow: "Beschreibung",
     bornOn: "Geboren am",
     nationality: "Nationalität",
     availability: "Verfügbarkeit",
   },
   experience: {
-    eyebrow: "Uhrmacherischer Werdegang",
+    eyebrow: "Berufserfahrung",
     achievement: "Erfolg",
   },
   skills: {
-    eyebrow: "Handwerk — Gesten, Qualitäten, Werkzeuge",
+    eyebrow: "Kompetenzen / Fach- und Sozialkompetenzen",
     tools: "Digitale Werkzeuge",
     admin: "Technische Gesten",
     human: "Berufliche Qualitäten",
@@ -278,13 +278,13 @@ const de: UIDictionary = {
   },
   contact: {
     eyebrow: "Kontakt",
-    headlineLead: "Eine Manufaktur, ",
-    headlineEmphasis: "eine zusätzliche Hand.",
+    headlineLead: "Bereit für einen professionellen ",
+    headlineEmphasis: "Austausch.",
     pitch: (availability, postal) =>
-      `Verfügbar ${availability} für eine anspruchsvolle Manufaktur, verbunden mit Diskretion und Exzellenz. Erstantwort innerhalb von 48 Stunden — ${postal}, Schweiz.`,
+      `Für jede Verwaltungsmöglichkeit, Antwort innerhalb von 48 Stunden. Verfügbarkeit ${availability} — ${postal}, Schweiz und Umgebung.`,
     emailLabel: "E-Mail",
     phoneLabel: "Telefon",
-    addressLabel: "Manufaktur",
+    addressLabel: "Adresse",
     cta: "Nachricht senden",
   },
   footer: {
@@ -302,9 +302,9 @@ const de: UIDictionary = {
     metaLine: (birth, nationality, availability) =>
       `Geboren am ${birth} · ${nationality} · Verfügbarkeit ${availability}`,
     profileTitle: "Profil",
-    experienceTitle: "Uhrmacherischer Werdegang",
+    experienceTitle: "Berufserfahrung",
     educationTitle: "Ausbildung",
-    skillsTitle: "Handwerk — Gesten, Qualitäten, Werkzeuge",
+    skillsTitle: "Kompetenzen / Fach- und Sozialkompetenzen",
     skillsTools: "Werkzeuge",
     skillsAdmin: "Gesten",
     skillsHuman: "Qualitäten",
@@ -315,9 +315,9 @@ const de: UIDictionary = {
 
 const it: UIDictionary = {
   nav: {
-    profil: "Atelier",
-    experience: "Percorso",
-    competences: "Mestiere",
+    profil: "Profilo",
+    experience: "Esperienza",
+    competences: "Competenze",
     formation: "Formazione",
     contact: "Contatto",
     cta: "Mettiti in contatto",
@@ -328,25 +328,25 @@ const it: UIDictionary = {
     selectLanguage: "Seleziona la lingua",
   },
   hero: {
-    eyebrowIndex: "01 — Atelier",
-    locationLabel: "Atelier",
+    eyebrowIndex: "01 — Profilo",
+    locationLabel: "Luogo",
     phoneLabel: "Telefono",
     emailLabel: "E-mail",
     locatedIn: (city, availability) =>
       `Con sede a ${city}, disponibile ${availability}.`,
   },
   about: {
-    eyebrow: "Profilo",
+    eyebrow: "Descrizione",
     bornOn: "Nata il",
     nationality: "Nazionalità",
     availability: "Disponibilità",
   },
   experience: {
-    eyebrow: "Percorso orologiero",
+    eyebrow: "Esperienza professionale",
     achievement: "Realizzazione",
   },
   skills: {
-    eyebrow: "Mestiere — gesti, qualità, strumenti",
+    eyebrow: "Competenze / Know-how e attitudini",
     tools: "Strumenti digitali",
     admin: "Gesti tecnici",
     human: "Qualità professionali",
@@ -357,13 +357,13 @@ const it: UIDictionary = {
   },
   contact: {
     eyebrow: "Contatto",
-    headlineLead: "Un atelier da raggiungere, ",
-    headlineEmphasis: "una mano in più.",
+    headlineLead: "Disponibile per uno scambio ",
+    headlineEmphasis: "professionale.",
     pitch: (availability, postal) =>
-      `Disponibile ${availability} per un atelier esigente, attenta alla discrezione e all’eccellenza. Risposta iniziale entro 48 ore — ${postal}, Svizzera.`,
+      `Per qualsiasi opportunità amministrativa, risposta entro 48 ore. Disponibilità ${availability} — ${postal}, Svizzera e dintorni.`,
     emailLabel: "E-mail",
     phoneLabel: "Telefono",
-    addressLabel: "Atelier",
+    addressLabel: "Indirizzo",
     cta: "Invia un messaggio",
   },
   footer: {
@@ -381,9 +381,9 @@ const it: UIDictionary = {
     metaLine: (birth, nationality, availability) =>
       `Nata il ${birth} · ${nationality} · Disponibilità ${availability}`,
     profileTitle: "Profilo",
-    experienceTitle: "Percorso orologiero",
+    experienceTitle: "Esperienza professionale",
     educationTitle: "Formazione",
-    skillsTitle: "Mestiere — gesti, qualità, strumenti",
+    skillsTitle: "Competenze / Know-how e attitudini",
     skillsTools: "Strumenti",
     skillsAdmin: "Gesti",
     skillsHuman: "Qualità",
