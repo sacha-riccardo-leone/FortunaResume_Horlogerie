@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bone: #faf8f4;
-  --onyx: #0b0b0b;
+  --paper: #ffffff;
+  --ink: #0a0a0a;
 }
 
 * {
@@ -17,66 +17,35 @@ html {
 }
 
 body {
-  background: var(--bone);
-  color: var(--onyx);
-  font-feature-settings: "liga", "calt", "onum" 1;
+  background: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv11";
 }
 
 ::selection {
-  background: #0b0b0b;
-  color: #faf8f4;
+  background: #0a0a0a;
+  color: #ffffff;
 }
 
-/* Guilloché-inspired ambient texture */
-.guilloche {
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(11, 11, 11, 0.035) 0, transparent 60%),
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      rgba(11, 11, 11, 0.025) 0 1px,
-      transparent 1px 14px
-    );
-}
-
-/* Soft paper texture */
-.paper-grain {
-  background-image:
-    linear-gradient(to bottom, rgba(243, 241, 238, 0) 0%, rgba(243, 241, 238, 0.6) 100%),
-    radial-gradient(circle at 1px 1px, rgba(11, 11, 11, 0.05) 1px, transparent 0);
-  background-size: auto, 3px 3px;
-}
-
-.divider-fine {
-  background: linear-gradient(to right, transparent, rgba(11, 11, 11, 0.18) 30%, rgba(11, 11, 11, 0.18) 70%, transparent);
+/* Ultra-thin horizontal rule */
+.hairline {
+  background: linear-gradient(to right, transparent, #d4d4d4 20%, #d4d4d4 80%, transparent);
   height: 1px;
 }
 
-.tick-row {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(11, 11, 11, 0.25) 0 1px,
-    transparent 1px 12px
-  );
+.number-caret::before {
+  content: "—";
+  margin-right: 0.75rem;
+  color: #a3a3a3;
+  font-weight: 400;
 }
 
-/* Card spec */
-.case-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f9f7f3 100%);
-  border: 1px solid rgba(11, 11, 11, 0.06);
-  box-shadow:
-    0 40px 80px -50px rgba(11, 11, 11, 0.3),
-    0 16px 32px -20px rgba(11, 11, 11, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+.dot-grid {
+  background-image: radial-gradient(circle, #e7e5e4 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.case-card-dark {
-  background: linear-gradient(180deg, #151514 0%, #0b0b0b 100%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow:
-    0 40px 80px -50px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
+/* Premium hover underline */
 .link-reveal {
   position: relative;
   display: inline-block;
@@ -91,25 +60,48 @@ body {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .link-reveal:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-/* Subtle oscillation animation (balance-wheel breath) */
-@keyframes breathe {
-  0%, 100% { transform: rotate(-0.6deg); }
-  50% { transform: rotate(0.6deg); }
-}
-.breathe {
-  animation: breathe 6s ease-in-out infinite;
-  transform-origin: center;
+/* ───────────────────────────────────────────────────────────────
+   Print: A4 resume layout
+   ─────────────────────────────────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 11mm 12mm;
 }
 
-@keyframes sweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0a0a0a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* No animations, transitions, or transforms in print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Framer Motion sets opacity:0 inline pre-animation; force it visible
+     for print since we skip animation triggers. Only affects nodes that
+     remain visible in print (i.e. inside PrintLayout). */
+  [style*="opacity:0"],
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+  }
 }
-.sweep-60 { animation: sweep 60s linear infinite; transform-origin: center; }

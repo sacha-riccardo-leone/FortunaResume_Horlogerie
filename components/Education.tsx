@@ -1,69 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionLabel from "./SectionLabel";
-import { resumeData } from "@/lib/data";
+import Section from "./Section";
+import { useLocale } from "./LocaleProvider";
 
 export default function Education() {
+  const { data, t } = useLocale();
   return (
-    <section id="formation" className="relative py-24 md:py-32 bg-platinum/40">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel
-          index="04"
-          eyebrow="Formation"
-          title="Diplômes & chronologie."
-        />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+    <Section id="formation" index="05" eyebrow={t.education.eyebrow} tone="soft">
+      <ul className="divide-y divide-paper-line border-t border-b border-paper-line">
+        {data.education.map((e, i) => (
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 case-card rounded-case p-8 md:p-12"
+            transition={{ duration: 0.6, delay: i * 0.05 }}
+            className="py-6 grid grid-cols-12 gap-4 items-baseline"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint mb-6">
-              Certifications
+            <div className="col-span-3 md:col-span-2 font-mono text-sm text-ink">{e.year}</div>
+            <div className="col-span-9 md:col-span-7 font-display text-lg md:text-xl text-ink">
+              {e.title}
             </div>
-            <ul className="divide-y divide-platinum-line">
-              {resumeData.education.map((e, i) => (
-                <li key={i} className="py-5 grid grid-cols-12 gap-4 items-baseline">
-                  <div className="col-span-3 md:col-span-2 font-mono text-sm text-onyx">{e.year}</div>
-                  <div className="col-span-9 md:col-span-7 font-display text-xl md:text-2xl text-onyx leading-snug">
-                    {e.title}
-                  </div>
-                  <div className="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-[0.25em] text-graphite md:text-right">
-                    {e.school}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            <div className="col-span-12 md:col-span-3 text-sm text-ink-muted md:text-right">
+              {e.school}
+            </div>
+          </motion.li>
+        ))}
+      </ul>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-5 case-card rounded-case p-8 md:p-12"
+      <div className="mt-10 flex flex-wrap gap-3">
+        {data.interests.map((i) => (
+          <span
+            key={i}
+            className="text-xs px-3 py-1.5 rounded-full border border-ink/20 text-ink-muted"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint mb-6">
-              Chronologie
-            </div>
-            <ol className="relative border-l border-platinum-line pl-6 space-y-6">
-              {resumeData.timeline.map((t, i) => (
-                <li key={i} className="relative">
-                  <span className="absolute -left-[29px] top-1 h-2 w-2 rounded-full bg-onyx" />
-                  <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-graphite-faint">
-                    {t.year}
-                  </div>
-                  <div className="font-display text-lg text-onyx mt-0.5">{t.label}</div>
-                </li>
-              ))}
-            </ol>
-          </motion.div>
-        </div>
+            {i}
+          </span>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

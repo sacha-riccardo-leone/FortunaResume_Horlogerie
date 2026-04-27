@@ -1,111 +1,75 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionLabel from "./SectionLabel";
-import { resumeData } from "@/lib/data";
+import Section from "./Section";
+import { useLocale } from "./LocaleProvider";
 
 export default function Skills() {
-  const { skills, languages } = resumeData;
-
+  const { data, t } = useLocale();
+  const { skills, languages } = data;
   const groups = [
-    { title: "Gestes techniques", items: skills.technical, accent: "bg-onyx text-bone" },
-    { title: "Qualités professionnelles", items: skills.qualities, accent: "bg-bone text-onyx border border-platinum-line" },
-    { title: "Outils", items: skills.tools, accent: "bg-platinum/60 text-onyx" },
+    { title: t.skills.tools, items: skills.tools },
+    { title: t.skills.admin, items: skills.admin },
+    { title: t.skills.human, items: skills.human },
   ];
 
   return (
-    <section id="metier" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel
-          index="03"
-          eyebrow="Métier"
-          title="Gestes, qualités, outils."
-          subtitle="Un savoir-faire construit pièce par pièce, fidèle à la tradition horlogère suisse."
-        />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-8 space-y-6">
-            {groups.map((g, gi) => (
-              <motion.div
-                key={g.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, delay: gi * 0.07 }}
-                className="case-card rounded-case p-8 md:p-10"
-              >
-                <div className="flex items-baseline justify-between mb-6">
-                  <h3 className="font-display text-2xl text-onyx">{g.title}</h3>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-faint">
-                    {g.items.length} éléments
+    <Section id="competences" index="04" eyebrow={t.skills.eyebrow}>
+      <div className="grid grid-cols-12 gap-y-10 md:gap-10">
+        <div className="col-span-12 md:col-span-8 space-y-10">
+          {groups.map((g, gi) => (
+            <motion.div
+              key={g.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: gi * 0.08 }}
+            >
+              <h3 className="text-eyebrow uppercase text-ink-faint mb-4">{g.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center rounded-full border border-paper-line px-4 py-1.5 text-sm text-ink-soft bg-paper hover:border-ink hover:bg-ink hover:text-paper transition-colors duration-300"
+                  >
+                    {s}
                   </span>
-                </div>
-                <div className="flex flex-wrap gap-2.5">
-                  {g.items.map((s) => (
-                    <span
-                      key={s}
-                      className={`inline-flex items-center rounded-full px-4 py-2 text-[13px] font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5 ${g.accent}`}
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
+        <div className="col-span-12 md:col-span-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-4 case-card-dark rounded-case p-8 md:p-10 text-bone"
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-baseline justify-between mb-8">
-              <h3 className="font-display italic text-2xl">Langues</h3>
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/50">
-                03
-              </span>
-            </div>
-            <ul className="space-y-7">
+            <h3 className="text-eyebrow uppercase text-ink-faint mb-6">{t.skills.languages}</h3>
+            <ul className="space-y-5">
               {languages.map((l) => (
                 <li key={l.name}>
-                  <div className="flex items-baseline justify-between mb-3">
-                    <span className="font-display text-lg">{l.name}</span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50">
-                      {l.level}
-                    </span>
+                  <div className="flex items-baseline justify-between mb-2">
+                    <span className="font-display text-lg text-ink">{l.name}</span>
+                    <span className="text-xs text-ink-muted">{l.level}</span>
                   </div>
-                  <div className="relative h-[2px] w-full bg-bone/15 overflow-hidden">
+                  <div className="h-px bg-paper-line relative overflow-hidden">
                     <motion.span
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: l.score / 100 }}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${l.score}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute inset-0 bg-bone origin-left"
+                      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute left-0 top-0 h-[2px] bg-ink -translate-y-[0.5px]"
                     />
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 pt-6 border-t border-bone/10">
-              <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/50 mb-2">
-                Centres d’intérêt
-              </div>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {resumeData.interests.map((i) => (
-                  <span
-                    key={i}
-                    className="text-[11px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full border border-bone/25"
-                  >
-                    {i}
-                  </span>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
