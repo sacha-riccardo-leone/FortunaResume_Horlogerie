@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
 import { resumeData } from "@/lib/data";
 import "./globals.css";
 
-const sans = Inter_Tight({
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -30,8 +37,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
-      <body className="font-sans text-ink bg-paper antialiased">{children}</body>
+    <html lang="fr" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body className="font-sans text-onyx bg-bone">{children}</body>
     </html>
   );
 }

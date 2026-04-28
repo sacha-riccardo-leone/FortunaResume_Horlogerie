@@ -8,44 +8,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: "#0A0A0A",
-          soft: "#1A1A1A",
-          muted: "#525252",
-          subtle: "#737373",
-          faint: "#A3A3A3",
+        onyx: {
+          DEFAULT: "#0B0B0B",
+          deep: "#151514",
+          warm: "#1C1B1A",
         },
-        paper: {
-          DEFAULT: "#FFFFFF",
-          soft: "#FAFAFA",
-          warm: "#F5F5F4",
-          line: "#E7E5E4",
+        platinum: {
+          DEFAULT: "#F3F1EE",
+          soft: "#EDEAE4",
+          cool: "#E4E1DA",
+          line: "#D6D3CC",
+        },
+        bone: "#FAF8F4",
+        graphite: {
+          DEFAULT: "#4A4743",
+          light: "#6B6762",
+          faint: "#8F8B85",
         },
       },
       fontFamily: {
+        display: ["var(--font-display)", "Didot", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
-        "display-xl": ["clamp(3rem, 9vw, 8rem)", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
-        "display-lg": ["clamp(2.5rem, 6vw, 5rem)", { lineHeight: "1", letterSpacing: "-0.03em" }],
-        "display-md": ["clamp(1.75rem, 3.5vw, 2.75rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "eyebrow": ["0.68rem", { lineHeight: "1", letterSpacing: "0.22em" }],
+        "display-xl": ["clamp(3rem, 10vw, 9rem)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],
+        "display-lg": ["clamp(2.25rem, 5vw, 4.5rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
+        "display-md": ["clamp(1.75rem, 3vw, 2.75rem)", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
+        "eyebrow": ["0.7rem", { lineHeight: "1", letterSpacing: "0.32em" }],
       },
-      animation: {
-        "fade-up": "fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-        "scale-in": "scale-in 0.6s ease-out forwards",
+      boxShadow: {
+        "dial": "0 40px 80px -40px rgba(11, 11, 11, 0.25), 0 12px 32px -16px rgba(11, 11, 11, 0.12)",
+        "dial-soft": "0 30px 60px -30px rgba(11, 11, 11, 0.15), 0 8px 20px -10px rgba(11, 11, 11, 0.08)",
+        "inset-fine": "inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(0,0,0,0.04)",
       },
-      keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(16px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "scale-in": {
-          "0%": { opacity: "0", transform: "scale(0.98)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
+      borderRadius: {
+        "case": "28px",
+        "caseLg": "42px",
       },
     },
   },

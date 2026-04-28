@@ -1,48 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Section from "./Section";
-import { useLocale } from "./LocaleProvider";
+import SectionLabel from "./SectionLabel";
+import { resumeData } from "@/lib/data";
 
 export default function About() {
-  const { data, t } = useLocale();
-  const { profile, identity } = data;
-  const facts = [
-    { label: t.about.bornOn, value: identity.birth },
-    { label: t.about.nationality, value: identity.nationality },
-    { label: t.about.availability, value: identity.availability },
-  ];
+  const { profile, identity, modules } = resumeData;
 
   return (
-    <Section id="profil" index="02" eyebrow={t.about.eyebrow}>
-      <div className="grid grid-cols-12 gap-y-10 md:gap-10">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-12 md:col-span-8 text-lg leading-[1.8] text-ink-soft"
-        >
-          {profile}
-        </motion.p>
+    <section id="atelier" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
+        <SectionLabel index="01" eyebrow="Atelier" title="Un atelier discret, une exigence constante." />
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-12 md:col-span-4"
-        >
-          <dl className="space-y-4 border-l border-paper-line pl-6">
-            {facts.map((f) => (
-              <div key={f.label} className="flex items-baseline justify-between gap-4">
-                <dt className="text-eyebrow uppercase text-ink-faint">{f.label}</dt>
-                <dd className="text-sm text-ink font-medium">{f.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <motion.article
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-8 case-card rounded-caseLg p-10 md:p-14"
+          >
+            <p className="text-lg md:text-xl leading-[1.8] text-graphite first-letter:font-display first-letter:text-6xl first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-onyx">
+              {profile}
+            </p>
+            <div className="mt-10 pt-8 border-t border-platinum-line flex flex-wrap items-center gap-6">
+              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint">
+                Signature
+              </span>
+              <span className="font-display italic text-2xl text-onyx">Fortuna Chung</span>
+              <span className="h-px flex-1 min-w-[60px] bg-platinum-line" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite">
+                Swiss Made · {identity.birth.slice(-4)}
+              </span>
+            </div>
+          </motion.article>
+
+          <motion.aside
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-4 case-card-dark rounded-caseLg p-10 text-bone"
+          >
+            <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-bone/50 mb-6">
+              Spécialité · Modules
+            </div>
+            <ul className="space-y-3">
+              {modules.map((m, i) => (
+                <li
+                  key={m}
+                  className="flex items-baseline gap-4 border-b border-bone/10 pb-3 last:border-b-0"
+                >
+                  <span className="font-mono text-[10px] text-bone/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display italic text-lg leading-snug">{m}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.aside>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

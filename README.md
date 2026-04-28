@@ -15,4 +15,4 @@ Push to GitHub and import into Vercel — zero configuration.
 
 ## Content
 
-Resume data lives per-locale in `lib/data/{fr,en,de,it}.ts` and UI strings in `lib/i18n/dictionary.ts`.
+All resume data lives in `lib/data.ts`.
