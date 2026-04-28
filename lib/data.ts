@@ -9,7 +9,6 @@ export const resumeData = {
     lastName: "Chung",
     role: "Opératrice en horlogerie",
     tagline: "Précision · Dextérité · Contrôle qualité",
-    atelier: "La Chaux-de-Fonds — Berceau de la haute horlogerie",
     birth: "05.09.1997",
     nationality: "Suisse",
     availability: "80 – 100 %",
@@ -24,7 +23,7 @@ export const resumeData = {
     country: "Suisse",
   },
   profile:
-    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Je maîtrise les gestes techniques de précision — assemblage de mouvements, huilage, pose et assemblage de bracelets, conditionnement et contrôle qualité (visitage). Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans un atelier où précision et qualité sont au cœur des priorités.",
+    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Je maîtrise les gestes techniques de précision — assemblage de mouvements, huilage, pose et assemblage de bracelets, conditionnement et contrôle qualité (visitage). Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans une équipe où précision et qualité sont au cœur des priorités.",
   experience: [
     {
       period: "2022 — 2023",
@@ -140,7 +139,7 @@ export const resumeData = {
     { year: "2019", label: "CFC obtenu — bases de rigueur consolidées" },
     { year: "2021", label: "Formation horlogère au Pôle Industrie" },
     { year: "2022", label: "Entrée en manufacture — Rolex SA" },
-    { year: "2026", label: "Disponible pour un nouvel atelier" },
+    { year: "2026", label: "Disponible pour une nouvelle opportunité" },
   ],
 };
 

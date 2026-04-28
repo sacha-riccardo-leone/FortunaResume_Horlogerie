@@ -6,14 +6,9 @@ import { resumeData } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="parcours" className="relative py-24 md:py-32 bg-platinum/40">
+    <section id="experience" className="relative py-24 md:py-32 bg-platinum/40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel
-          index="02"
-          eyebrow="Parcours"
-          title="Étapes d’une trajectoire horlogère."
-          subtitle="Chaque étape a affiné le geste, consolidé la méthode et nourri l’exigence du détail."
-        />
+        <SectionLabel index="02" eyebrow="Expérience professionnelle" />
 
         <div className="tick-row h-[1px] mb-8 opacity-60" aria-hidden />
 

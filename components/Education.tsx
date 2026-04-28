@@ -8,11 +8,7 @@ export default function Education() {
   return (
     <section id="formation" className="relative py-24 md:py-32 bg-platinum/40">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel
-          index="04"
-          eyebrow="Formation"
-          title="Diplômes & chronologie."
-        />
+        <SectionLabel index="04" eyebrow="Formation" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div

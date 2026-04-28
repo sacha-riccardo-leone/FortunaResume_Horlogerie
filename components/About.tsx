@@ -5,12 +5,12 @@ import SectionLabel from "./SectionLabel";
 import { resumeData } from "@/lib/data";
 
 export default function About() {
-  const { profile, identity, modules } = resumeData;
+  const { profile, modules } = resumeData;
 
   return (
-    <section id="atelier" className="relative py-24 md:py-32">
+    <section id="profil" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel index="01" eyebrow="Atelier" title="Un atelier discret, une exigence constante." />
+        <SectionLabel index="01" eyebrow="Description" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.article
@@ -20,19 +20,9 @@ export default function About() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-8 case-card rounded-caseLg p-10 md:p-14"
           >
-            <p className="text-lg md:text-xl leading-[1.8] text-graphite first-letter:font-display first-letter:text-6xl first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-onyx">
+            <p className="text-lg md:text-xl leading-[1.8] text-graphite">
               {profile}
             </p>
-            <div className="mt-10 pt-8 border-t border-platinum-line flex flex-wrap items-center gap-6">
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint">
-                Signature
-              </span>
-              <span className="font-display italic text-2xl text-onyx">Fortuna Chung</span>
-              <span className="h-px flex-1 min-w-[60px] bg-platinum-line" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite">
-                Swiss Made · {identity.birth.slice(-4)}
-              </span>
-            </div>
           </motion.article>
 
           <motion.aside

@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  { href: "#atelier", label: "Atelier" },
-  { href: "#parcours", label: "Parcours" },
-  { href: "#metier", label: "Métier" },
+  { href: "#profil", label: "Profil" },
+  { href: "#experience", label: "Expérience" },
+  { href: "#competences", label: "Compétences" },
   { href: "#formation", label: "Formation" },
   { href: "#contact", label: "Contact" },
 ];
@@ -59,10 +59,7 @@ export default function Nav() {
               </span>
               <div className="hidden sm:block leading-tight">
                 <div className="font-display italic text-[15px] text-onyx">
-                  Fortuna Chung
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-light">
-                  Atelier · Suisse
+                  Fortuna Chung Ming Kan
                 </div>
               </div>
             </a>

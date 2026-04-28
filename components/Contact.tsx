@@ -38,14 +38,13 @@ export default function Contact() {
           </div>
 
           <h2 className="relative font-display font-light text-display-lg leading-[1.02]">
-            Un atelier à rejoindre,
-            <br />
-            <span className="italic">une main supplémentaire.</span>
+            À disposition pour échange{" "}
+            <span className="italic">professionnel.</span>
           </h2>
 
           <p className="relative mt-6 max-w-2xl text-bone/70 leading-[1.8]">
-            Disponible {identity.availability} pour un atelier exigeant, attaché à la discrétion et
-            à l’excellence. Échange initial sous 48 heures.
+            Pour toute opportunité, réponse sous 48 heures. Disponibilité {identity.availability} —{" "}
+            {contact.postal}, Suisse et environs.
           </p>
 
           <div className="relative mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-bone/15">
@@ -73,7 +72,7 @@ export default function Contact() {
             </div>
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-bone/50 mb-3">
-                Atelier
+                Adresse
               </div>
               <p className="font-display text-lg md:text-xl leading-snug">
                 {contact.address}

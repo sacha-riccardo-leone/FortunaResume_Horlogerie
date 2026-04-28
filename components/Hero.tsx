@@ -67,23 +67,6 @@ function Dial() {
             })}
           </svg>
 
-          {/* Center label */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-            <div className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-graphite mb-2">
-              Manufacture Personnelle
-            </div>
-            <div className="font-display italic text-2xl md:text-4xl text-onyx leading-none">
-              Fortuna
-            </div>
-            <div className="font-display text-base md:text-lg text-onyx/80 mt-1 leading-none">
-              Chung
-            </div>
-            <div className="mt-3 h-px w-10 bg-onyx/40" />
-            <div className="mt-3 font-mono text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-graphite">
-              Swiss Made
-            </div>
-          </div>
-
           {/* Live hour · minute · second hands — synced to visitor's local time */}
           <svg
             className="absolute inset-0 h-full w-full pointer-events-none"
@@ -143,18 +126,6 @@ export default function Hero() {
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease }}
-              className="flex items-center gap-4 mb-6"
-            >
-              <span className="h-px w-10 bg-onyx/40" />
-              <span className="font-mono text-[11px] uppercase tracking-[0.4em] text-graphite">
-                Curriculum Vitæ · Réf. 1997 / CH
-              </span>
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -190,7 +161,7 @@ export default function Hero() {
               className="mt-12 flex flex-wrap items-center gap-4"
             >
               <a
-                href="#parcours"
+                href="#experience"
                 className="inline-flex items-center gap-3 rounded-full bg-onyx text-bone px-6 py-3.5 text-[11px] uppercase tracking-[0.35em] hover:bg-onyx-deep transition"
               >
                 Découvrir le parcours
@@ -212,7 +183,7 @@ export default function Hero() {
             >
               {[
                 { k: "Depuis", v: identity.since },
-                { k: "Atelier", v: "La Chaux-de-Fonds" },
+                { k: "Lieu", v: "La Chaux-de-Fonds" },
                 { k: "Disponibilité", v: identity.availability },
                 { k: "Nationalité", v: identity.nationality },
               ].map((s) => (

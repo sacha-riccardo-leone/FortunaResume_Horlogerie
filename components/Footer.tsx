@@ -8,8 +8,8 @@ export default function Footer() {
         <div>
           © {year} {resumeData.identity.firstName} {resumeData.identity.lastName}
         </div>
-        <div>Swiss Made · La Chaux-de-Fonds</div>
-        <div>Curriculum Horloger</div>
+        <div>La Chaux-de-Fonds · CH</div>
+        <div>Curriculum Vitæ</div>
       </div>
     </footer>
   );

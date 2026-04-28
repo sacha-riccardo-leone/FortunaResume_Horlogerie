@@ -19,7 +19,7 @@ html {
 body {
   background: var(--bone);
   color: var(--onyx);
-  font-feature-settings: "liga", "calt", "onum" 1;
+  font-feature-settings: "ss01", "cv11";
 }
 
 ::selection {

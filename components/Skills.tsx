@@ -14,14 +14,9 @@ export default function Skills() {
   ];
 
   return (
-    <section id="metier" className="relative py-24 md:py-32">
+    <section id="competences" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel
-          index="03"
-          eyebrow="Métier"
-          title="Gestes, qualités, outils."
-          subtitle="Un savoir-faire construit pièce par pièce, fidèle à la tradition horlogère suisse."
-        />
+        <SectionLabel index="03" eyebrow="Compétences / Savoir faire, savoir être" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 space-y-6">

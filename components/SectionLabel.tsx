@@ -10,7 +10,7 @@ export default function SectionLabel({
 }: {
   index: string;
   eyebrow: string;
-  title: string;
+  title?: string;
   subtitle?: string;
 }) {
   return (
@@ -30,15 +30,17 @@ export default function SectionLabel({
           {eyebrow}
         </span>
       </motion.div>
-      <motion.h2
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.9, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-5 font-display font-light text-display-lg text-onyx max-w-4xl"
-      >
-        {title}
-      </motion.h2>
+      {title && (
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.9, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-5 font-display font-light text-display-lg text-onyx max-w-4xl"
+        >
+          {title}
+        </motion.h2>
+      )}
       {subtitle && (
         <motion.p
           initial={{ opacity: 0 }}
