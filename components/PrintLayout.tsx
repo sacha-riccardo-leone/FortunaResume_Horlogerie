@@ -147,6 +147,17 @@ export default function PrintLayout() {
           </p>
         </div>
       </section>
+
+      {/* Canonical URL footer — always shows the deployed link in the printed PDF */}
+      <footer className="mt-[3mm] pt-[1mm] border-t border-platinum-line flex items-baseline justify-between text-[6.6pt] text-graphite-faint">
+        <span>Curriculum Vitæ · Fortuna Chung Ming Kan</span>
+        <a
+          href="https://fortuna-resume-horlogerie.vercel.app/"
+          className="text-graphite no-underline"
+        >
+          https://fortuna-resume-horlogerie.vercel.app/
+        </a>
+      </footer>
     </article>
   );
 }

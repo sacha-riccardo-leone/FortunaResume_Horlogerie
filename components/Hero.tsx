@@ -126,7 +126,7 @@ export default function Hero() {
       </h1>
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
-          <div className="lg:col-span-6 order-2 lg:order-1">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ export default function Hero() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-faint mb-2">
                     {s.k}
                   </div>
-                  <div className="font-display text-base md:text-lg text-onyx whitespace-nowrap">
+                  <div className="font-display text-base md:text-lg text-onyx">
                     {s.v}
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-6 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center gap-8">
+          <div className="lg:col-span-5 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center gap-8">
             <Dial />
             <motion.figure
               initial={{ opacity: 0, y: 12 }}

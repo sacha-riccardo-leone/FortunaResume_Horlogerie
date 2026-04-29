@@ -120,6 +120,20 @@ body {
 @page {
   size: A4;
   margin: 11mm 12mm;
+  /* Override browser defaults in @page margin boxes where supported.
+     Browsers that don't honour these still get the canonical URL from
+     the in-page footer. */
+  @top-left { content: ""; }
+  @top-center { content: ""; }
+  @top-right { content: ""; }
+  @bottom-left { content: ""; }
+  @bottom-center { content: ""; }
+  @bottom-right {
+    content: "https://fortuna-resume-horlogerie.vercel.app/";
+    font-family: "Inter Tight", system-ui, sans-serif;
+    font-size: 7pt;
+    color: #8F8B85;
+  }
 }
 
 @media print {
