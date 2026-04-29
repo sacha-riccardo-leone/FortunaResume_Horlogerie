@@ -29,13 +29,13 @@ export const resumeData = {
       place: "Pôle Industrie",
       location: "Le Locle",
       period: "2021",
-      text: "Tout commence au Pôle Industrie du Locle, en cours modulaire. Une école qui pose les fondations du métier : la précision du geste, la rigueur du protocole et la patience qu’exige le travail sur mouvement. L’ensemble des modules est validé par les formateurs à l’issue du cursus.",
+      text: "Formation modulaire complète d’opératrice en horlogerie, sanctionnée par la validation de l’ensemble des modules. Acquisition structurée des gestes techniques de précision et des protocoles de production, complétée par les bases théoriques du métier. Développement de la dextérité manuelle et de la rigueur méthodique indispensables au travail sur mouvement.",
     },
     {
       place: "Rolex SA",
       location: "Bienne",
       period: "2022 — 2023",
-      text: "Puis vingt-quatre mois en manufacture chez Rolex SA, via Interima et Flexsis. Le module devient cadence, le geste s’inscrit dans une production exigeante. Un environnement qui affine la précision, consolide les standards de la haute horlogerie suisse et installe le travail dans la durée.",
+      text: "Vingt-quatre mois en manufacture, via Interima et Flexsis, qui ont consolidé l’autonomie technique et la fiabilité du geste sous cadence soutenue. Application stricte des standards qualité et de la traçabilité propres à la haute horlogerie suisse, et collaboration quotidienne au sein d’une équipe de production.",
     },
   ],
   experience: [
