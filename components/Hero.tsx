@@ -31,7 +31,7 @@ function Dial() {
 
   return (
     <div className="flex flex-col items-center gap-5 w-full">
-      <div className="relative aspect-square w-full max-w-[520px]">
+      <div className="relative aspect-square w-full max-w-[420px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -39,7 +39,15 @@ function Dial() {
           className="absolute inset-0 rounded-full"
         >
           <div className="absolute inset-12 rounded-full border border-onyx/10" />
-          <div className="absolute inset-20 rounded-full border border-onyx/15" />
+          <div className="absolute inset-20 rounded-full border border-onyx/15">
+            <div className="absolute left-[6%] top-1/2 -translate-y-1/2 w-[42%] text-center font-display text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-[1.6] text-graphite pointer-events-none">
+              Le geste.
+              <br />
+              La précision.
+              <br />
+              Le temps.
+            </div>
+          </div>
 
           {/* Ticks */}
           <svg
@@ -203,20 +211,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8 flex flex-col items-center gap-6">
+          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center">
             <Dial />
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease }}
-              className="font-display text-sm md:text-base text-graphite leading-[1.5] text-center"
-            >
-              Le geste.
-              <br />
-              La précision.
-              <br />
-              Le temps.
-            </motion.p>
           </div>
         </div>
       </div>
