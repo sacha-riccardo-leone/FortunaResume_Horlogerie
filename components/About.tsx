@@ -52,7 +52,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-4 lg:self-start case-card-dark rounded-caseLg p-10 text-bone"
+            className="lg:col-span-4 case-card-dark rounded-caseLg p-10 text-bone"
           >
             <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-bone/50 mb-6">
               Technique
