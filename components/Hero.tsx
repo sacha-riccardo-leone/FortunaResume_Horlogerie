@@ -31,7 +31,7 @@ function Dial() {
 
   return (
     <div className="flex flex-col items-center gap-5 w-full">
-      <div className="relative aspect-square w-full max-w-[630px]">
+      <div className="relative aspect-square w-full max-w-[520px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -183,7 +183,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-5 border-t border-platinum-line"
+              className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-12 gap-y-6 pt-5 border-t border-platinum-line"
             >
               {[
                 { k: "Depuis", v: identity.since },
