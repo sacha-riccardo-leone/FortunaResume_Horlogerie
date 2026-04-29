@@ -211,7 +211,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-6 order-1 lg:order-2 lg:-mt-28 flex flex-col items-center">
+          <div className="lg:col-span-6 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center">
             <Dial />
           </div>
         </div>
