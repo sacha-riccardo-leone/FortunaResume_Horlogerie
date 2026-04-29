@@ -31,16 +31,16 @@ function Dial() {
 
   return (
     <div className="flex flex-col items-center gap-5 w-full">
-      <div className="relative aspect-square w-full max-w-[420px]">
+      <div className="relative aspect-square w-full max-w-[630px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease }}
           className="absolute inset-0 rounded-full"
         >
-          <div className="absolute inset-12 rounded-full border border-onyx/10" />
-          <div className="absolute inset-20 rounded-full border border-onyx/15">
-            <div className="absolute left-[6%] top-1/2 -translate-y-1/2 w-[42%] text-center font-display text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-[1.6] text-graphite pointer-events-none">
+          <div className="absolute inset-16 rounded-full border border-onyx/10" />
+          <div className="absolute inset-28 rounded-full border border-onyx/15">
+            <div className="absolute left-[6%] top-1/2 -translate-y-1/2 w-[42%] text-center font-display text-[10px] sm:text-[12px] md:text-[13px] lg:text-[15px] leading-[1.6] text-graphite pointer-events-none">
               Le geste.
               <br />
               La précision.
@@ -134,7 +134,7 @@ export default function Hero() {
       </h1>
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
-          <div className="lg:col-span-7 order-2 lg:order-1">
+          <div className="lg:col-span-6 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center">
+          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col items-center">
             <Dial />
           </div>
         </div>
