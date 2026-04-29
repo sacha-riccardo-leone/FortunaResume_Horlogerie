@@ -121,6 +121,9 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative pt-32 sm:pt-36 md:pt-44 pb-20 sm:pb-24">
+      <h1 className="sr-only">
+        {identity.firstName} {identity.lastName} · {identity.role}
+      </h1>
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
           <div className="lg:col-span-7 order-2 lg:order-1">
@@ -200,20 +203,20 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8 flex flex-col items-center gap-8 lg:gap-10">
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8 flex flex-col items-center gap-6">
+            <Dial />
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.1, ease }}
-              className="font-display font-light text-display-lg text-onyx leading-[0.95] text-center"
+              transition={{ duration: 0.8, delay: 0.5, ease }}
+              className="font-display text-sm md:text-base text-graphite leading-[1.5] text-center"
             >
               Le geste.
               <br />
               La précision.
               <br />
               Le temps.
-            </motion.h1>
-            <Dial />
+            </motion.p>
           </div>
         </div>
       </div>
