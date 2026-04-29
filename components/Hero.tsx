@@ -39,15 +39,7 @@ function Dial() {
           className="absolute inset-0 rounded-full"
         >
           <div className="absolute inset-16 rounded-full border border-onyx/10" />
-          <div className="absolute inset-28 rounded-full border border-onyx/15">
-            <div className="absolute left-[6%] top-1/2 -translate-y-1/2 w-[42%] text-center font-display text-[10px] sm:text-[12px] md:text-[13px] lg:text-[15px] leading-[1.6] text-graphite pointer-events-none">
-              Le geste.
-              <br />
-              La précision.
-              <br />
-              Le temps.
-            </div>
-          </div>
+          <div className="absolute inset-28 rounded-full border border-onyx/15" />
 
           {/* Ticks */}
           <svg
@@ -211,8 +203,20 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-6 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center">
+          <div className="lg:col-span-6 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center gap-8">
             <Dial />
+            <motion.figure
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.6, ease }}
+              className="w-full text-center"
+            >
+              <blockquote className="inline-block text-left italic font-display text-base md:text-lg text-graphite leading-[1.8]">
+                <div>« Le geste.</div>
+                <div className="pl-10 md:pl-16">La précision.</div>
+                <div>Le temps. »</div>
+              </blockquote>
+            </motion.figure>
           </div>
         </div>
       </div>
