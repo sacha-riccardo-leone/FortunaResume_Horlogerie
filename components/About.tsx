@@ -18,7 +18,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-8 case-card rounded-caseLg p-10 md:p-14"
+            className="lg:col-span-8 lg:self-start case-card rounded-caseLg p-8 md:p-10"
           >
             <p className="text-lg md:text-xl leading-[1.8] text-graphite">
               {profile}
