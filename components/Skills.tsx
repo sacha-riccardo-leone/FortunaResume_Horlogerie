@@ -57,7 +57,7 @@ export default function Skills() {
             className="lg:col-span-4 case-card-dark rounded-case p-8 md:p-10 text-bone"
           >
             <div className="flex items-baseline justify-between mb-8">
-              <h3 className="font-display italic text-2xl">Langues</h3>
+              <h3 className="font-display text-2xl">Langues</h3>
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/50">
                 03
               </span>

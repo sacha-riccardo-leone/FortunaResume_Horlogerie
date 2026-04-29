@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { resumeData } from "@/lib/data";
@@ -35,9 +36,8 @@ function Dial() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease }}
-          className="absolute inset-0 rounded-full bg-gradient-to-br from-bone to-platinum shadow-dial case-card"
+          className="absolute inset-0 rounded-full"
         >
-          <div className="absolute inset-4 rounded-full guilloche" />
           <div className="absolute inset-12 rounded-full border border-onyx/10" />
           <div className="absolute inset-20 rounded-full border border-onyx/15" />
 
@@ -67,7 +67,7 @@ function Dial() {
             })}
           </svg>
 
-          {/* Live hour · minute · second hands — synced to visitor's local time */}
+          {/* Live hour, minute, second hands synced to visitor's local time */}
           <svg
             className="absolute inset-0 h-full w-full pointer-events-none"
             viewBox="0 0 100 100"
@@ -117,27 +117,28 @@ function Dial() {
 }
 
 export default function Hero() {
-  const { identity, contact } = resumeData;
+  const { identity } = resumeData;
 
   return (
     <section id="top" className="relative pt-32 sm:pt-36 md:pt-44 pb-20 sm:pb-24">
-      <div className="absolute inset-0 -z-10 paper-grain" aria-hidden />
-
       <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.1, ease }}
-              className="font-display font-light text-display-xl text-onyx leading-[0.95]"
+              className="relative w-full max-w-[520px] aspect-[4/5] overflow-hidden rounded-caseLg case-card"
             >
-              Le geste.
-              <br />
-              <span className="italic">La précision.</span>
-              <br />
-              Le temps.
-            </motion.h1>
+              <Image
+                src="/profile.jpeg"
+                alt={`${identity.firstName} ${identity.lastName}`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 520px, 100vw"
+                className="object-cover"
+              />
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -145,13 +146,13 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.3, ease }}
               className="mt-10 max-w-xl text-lg text-graphite leading-[1.7]"
             >
-              <span className="font-display italic text-onyx text-xl">
+              <span className="font-display text-onyx text-xl">
                 {identity.firstName} {identity.lastName}
               </span>{" "}
-              — {identity.role.toLowerCase()}, formée au{" "}
-              <em className="font-display italic text-onyx">Pôle Industrie du Locle</em> et
+              · {identity.role.toLowerCase()}, formée au{" "}
+              <em className="font-display not-italic text-onyx">Pôle Industrie du Locle</em> et
               expérimentée en manufacture chez{" "}
-              <em className="font-display italic text-onyx">Rolex SA</em>.
+              <em className="font-display not-italic text-onyx">Rolex SA</em>.
             </motion.p>
 
             <motion.div
@@ -179,7 +180,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-platinum-line"
+              className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-platinum-line"
             >
               {[
                 { k: "Depuis", v: identity.since },
@@ -191,13 +192,27 @@ export default function Hero() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-faint mb-2">
                     {s.k}
                   </div>
-                  <div className="font-display text-base md:text-lg text-onyx">{s.v}</div>
+                  <div className="font-display text-base md:text-lg text-onyx whitespace-nowrap">
+                    {s.v}
+                  </div>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8">
+          <div className="lg:col-span-5 order-1 lg:order-2 lg:pt-8 flex flex-col items-center gap-8 lg:gap-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1, ease }}
+              className="font-display font-light text-display-lg text-onyx leading-[0.95] text-center"
+            >
+              Le geste.
+              <br />
+              La précision.
+              <br />
+              Le temps.
+            </motion.h1>
             <Dial />
           </div>
         </div>

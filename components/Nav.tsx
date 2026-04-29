@@ -55,10 +55,10 @@ export default function Nav() {
             >
               <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-onyx/30 bg-bone">
                 <span className="absolute inset-[3px] rounded-full border border-onyx/10" />
-                <span className="relative font-display italic text-sm text-onyx">F</span>
+                <span className="relative font-display text-sm text-onyx">F</span>
               </span>
               <div className="hidden sm:block leading-tight">
-                <div className="font-display italic text-[15px] text-onyx">
+                <div className="font-display text-[15px] text-onyx">
                   Fortuna Chung Ming Kan
                 </div>
               </div>
@@ -144,9 +144,9 @@ export default function Nav() {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
-                    className="flex items-baseline gap-4 font-display italic text-4xl sm:text-5xl text-bone"
+                    className="flex items-baseline gap-4 font-display text-4xl sm:text-5xl text-bone"
                   >
-                    <span className="font-mono text-[10px] not-italic uppercase tracking-[0.28em] text-bone/50">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-bone/50">
                       0{i + 1}
                     </span>
                     {l.label}
@@ -160,7 +160,7 @@ export default function Nav() {
                 <a
                   href="mailto:chungfortuna@gmail.com"
                   onClick={() => setOpen(false)}
-                  className="font-display italic text-xl break-all link-reveal"
+                  className="font-display text-xl break-all link-reveal"
                 >
                   chungfortuna@gmail.com
                 </a>

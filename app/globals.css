@@ -113,3 +113,41 @@ body {
   to { transform: rotate(360deg); }
 }
 .sweep-60 { animation: sweep 60s linear infinite; transform-origin: center; }
+
+/* ───────────────────────────────────────────────────────────────
+   Print: A4 single-page resume layout
+   ─────────────────────────────────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 11mm 12mm;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0b0b0b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* No animations, transitions, or transforms while printing */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Framer Motion sets opacity:0 inline pre-animation; force visible
+     for content rendered inside the print layout. */
+  [style*="opacity:0"],
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+  }
+}

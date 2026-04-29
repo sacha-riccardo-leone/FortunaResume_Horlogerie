@@ -39,11 +39,11 @@ export default function Contact() {
 
           <h2 className="relative font-display font-light text-display-lg leading-[1.02]">
             À disposition pour échange{" "}
-            <span className="italic">professionnel.</span>
+            <span>professionnel.</span>
           </h2>
 
           <p className="relative mt-6 max-w-2xl text-bone/70 leading-[1.8]">
-            Pour toute opportunité, réponse sous 48 heures. Disponibilité {identity.availability} —{" "}
+            Pour toute opportunité, réponse sous 48 heures. Disponibilité {identity.availability} ·{" "}
             {contact.postal}, Suisse et environs.
           </p>
 
@@ -54,7 +54,7 @@ export default function Contact() {
               </div>
               <a
                 href={`mailto:${contact.email}`}
-                className="font-display italic text-xl md:text-2xl link-reveal break-all"
+                className="font-display text-xl md:text-2xl link-reveal break-all"
               >
                 {contact.email}
               </a>
@@ -65,7 +65,7 @@ export default function Contact() {
               </div>
               <a
                 href={`tel:${contact.phone}`}
-                className="font-display italic text-xl md:text-2xl link-reveal"
+                className="font-display text-xl md:text-2xl link-reveal"
               >
                 {contact.phoneFormatted}
               </a>
@@ -89,7 +89,7 @@ export default function Contact() {
               href={`mailto:${contact.email}`}
               className="group inline-flex items-center gap-4 rounded-full bg-bone px-7 py-4 text-onyx hover:bg-platinum transition-colors"
             >
-              <span className="font-display italic text-lg">Envoyer un courrier</span>
+              <span className="font-display text-lg">Envoyer un courrier</span>
               <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             </a>
             <a

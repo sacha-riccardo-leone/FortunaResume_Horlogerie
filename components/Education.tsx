@@ -23,12 +23,12 @@ export default function Education() {
             </div>
             <ul className="divide-y divide-platinum-line">
               {resumeData.education.map((e, i) => (
-                <li key={i} className="py-5 grid grid-cols-12 gap-4 items-baseline">
+                <li key={i} className="py-5 grid grid-cols-12 gap-3 md:gap-4 items-baseline">
                   <div className="col-span-3 md:col-span-2 font-mono text-sm text-onyx">{e.year}</div>
-                  <div className="col-span-9 md:col-span-7 font-display text-xl md:text-2xl text-onyx leading-snug">
+                  <div className="col-span-9 md:col-span-5 font-display text-xl md:text-2xl text-onyx leading-snug">
                     {e.title}
                   </div>
-                  <div className="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-[0.25em] text-graphite md:text-right">
+                  <div className="col-span-12 md:col-span-5 font-mono text-[12px] text-graphite md:text-right whitespace-nowrap">
                     {e.school}
                   </div>
                 </li>

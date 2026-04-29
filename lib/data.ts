@@ -23,7 +23,7 @@ export const resumeData = {
     country: "Suisse",
   },
   profile:
-    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Je maîtrise les gestes techniques de précision — assemblage de mouvements, huilage, pose et assemblage de bracelets, conditionnement et contrôle qualité (visitage). Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans une équipe où précision et qualité sont au cœur des priorités.",
+    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Je maîtrise les gestes techniques de précision : assemblage de mouvements, huilage, pose et assemblage de bracelets, conditionnement et contrôle qualité (visitage). Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans une équipe où précision et qualité sont au cœur des priorités.",
   experience: [
     {
       period: "2022 — 2023",
@@ -36,7 +36,7 @@ export const resumeData = {
         "Intégration en manufacture : assemblage, huilage, conditionnement et contrôle qualité sous cadences exigeantes.",
       bullets: [
         "Assemblage, huilage et graissage de composants horlogers.",
-        "Conditionnement, mise en bague et contrôle qualité — visitage.",
+        "Conditionnement, mise en bague et contrôle qualité et visitage.",
         "Travail de précision et de minutie dans le respect des cadences de production.",
         "Coordination et communication quotidiennes avec l’équipe de production.",
       ],
@@ -52,8 +52,8 @@ export const resumeData = {
       summary:
         "Validation de l’ensemble des modules théoriques et pratiques de la formation d’opératrice.",
       bullets: [
-        "Assemblage mouvement — pose et assemblage de bracelet.",
-        "Conditionnement — triage, vissage, enfilage.",
+        "Assemblage mouvement : pose et assemblage de bracelet.",
+        "Conditionnement : triage, vissage, enfilage.",
         "Pose d’applique et cours théoriques d’horlogerie.",
         "Développement de la dextérité manuelle et du geste précis.",
       ],
@@ -80,7 +80,7 @@ export const resumeData = {
       company: "Association L’Accueil",
       location: "Saint-Blaise",
       summary:
-        "Accompagnement éducatif et coordination pluridisciplinaire — autonomie, organisation, gestion du stress.",
+        "Accompagnement éducatif et coordination pluridisciplinaire : autonomie, organisation, gestion du stress.",
       bullets: [
         "Accompagnement d’enfants et coordination en équipe pluridisciplinaire.",
         "Développement de la gestion du stress, de l’autonomie et de l’organisation.",
@@ -106,7 +106,7 @@ export const resumeData = {
     "Conditionnement",
     "Triage · Vissage · Enfilage",
     "Pose d’applique",
-    "Contrôle qualité — Visitage",
+    "Contrôle qualité et visitage",
     "Cours théoriques d’horlogerie",
   ],
   skills: {
@@ -131,14 +131,14 @@ export const resumeData = {
   languages: [
     { name: "Français", level: "Langue maternelle", score: 100 },
     { name: "Anglais", level: "B1 — Intermédiaire", score: 55 },
-    { name: "Allemand", level: "A1 – A2 — Élémentaire", score: 30 },
+    { name: "Allemand", level: "A2 — Élémentaire", score: 30 },
   ],
   interests: ["Photographie", "Voyages", "Lecture"],
   timeline: [
     { year: "2015", label: "Premiers pas dans la vie active" },
-    { year: "2019", label: "CFC obtenu — bases de rigueur consolidées" },
+    { year: "2019", label: "CFC obtenu, bases de rigueur consolidées" },
     { year: "2021", label: "Formation horlogère au Pôle Industrie" },
-    { year: "2022", label: "Entrée en manufacture — Rolex SA" },
+    { year: "2022", label: "Entrée en manufacture chez Rolex SA" },
     { year: "2026", label: "Disponible pour une nouvelle opportunité" },
   ],
 };

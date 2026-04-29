@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section id="profil" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-14">
-        <SectionLabel index="01" eyebrow="Description" />
+        <SectionLabel index="01" eyebrow="Profil" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.article
@@ -33,7 +33,7 @@ export default function About() {
             className="lg:col-span-4 case-card-dark rounded-caseLg p-10 text-bone"
           >
             <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-bone/50 mb-6">
-              Spécialité · Modules
+              Technique
             </div>
             <ul className="space-y-3">
               {modules.map((m, i) => (
@@ -44,7 +44,7 @@ export default function About() {
                   <span className="font-mono text-[10px] text-bone/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display italic text-lg leading-snug">{m}</span>
+                  <span className="font-display text-lg leading-snug">{m}</span>
                 </li>
               ))}
             </ul>

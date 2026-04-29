@@ -28,7 +28,7 @@ export default function Experience() {
                     <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-bone/50 mb-3">
                       Période
                     </div>
-                    <div className="font-display italic text-2xl">{exp.period}</div>
+                    <div className="font-display text-2xl">{exp.period}</div>
                     <div className="mt-1 font-mono text-[11px] text-bone/60">{exp.duration}</div>
                   </div>
                   <div className="mt-8 pt-6 border-t border-bone/10">
@@ -49,9 +49,9 @@ export default function Experience() {
                     </span>
                   </div>
                   <p className="mt-2 text-graphite">
-                    <span className="font-display italic text-onyx text-lg">{exp.company}</span>
+                    <span className="font-display text-onyx text-lg">{exp.company}</span>
                     {"via" in exp && exp.via ? (
-                      <span className="text-graphite-faint"> — {exp.via}</span>
+                      <span className="text-graphite-faint"> · {exp.via}</span>
                     ) : null}
                   </p>
                   {exp.summary && (
@@ -70,7 +70,7 @@ export default function Experience() {
                       <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint mb-2">
                         Réalisation
                       </div>
-                      <p className="font-display italic text-lg text-onyx leading-snug">
+                      <p className="font-display text-lg text-onyx leading-snug">
                         {exp.achievement}
                       </p>
                     </div>
