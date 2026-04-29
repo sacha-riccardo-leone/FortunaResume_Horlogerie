@@ -12,15 +12,23 @@ export default function PrintLayout() {
     resumeData;
 
   return (
-    <article className="hidden print:block text-onyx bg-bone font-sans text-[8.4pt] leading-[1.4]">
+    <article className="hidden print:block text-onyx bg-white font-sans text-[8.4pt] leading-[1.4]">
       {/* Header */}
-      <header className="pb-[2.5mm] border-b border-platinum-line">
-        <h1 className="font-light tracking-[-0.02em] text-[21pt] leading-[1] text-onyx">
-          {identity.firstName} {identity.lastName}
-        </h1>
-        <p className="mt-[1.2mm] text-[9pt] text-graphite">
-          {identity.role} · {identity.tagline}.
-        </p>
+      <header className="pb-[2.5mm] border-b border-platinum-line flex items-center gap-[5mm]">
+        <div className="flex-1 min-w-0">
+          <h1 className="font-light tracking-[-0.02em] text-[21pt] leading-[1] text-onyx">
+            {identity.firstName} {identity.lastName}
+          </h1>
+          <p className="mt-[1.2mm] text-[9pt] text-graphite">
+            {identity.role} · {identity.tagline}.
+          </p>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/profile.jpeg"
+          alt={`${identity.firstName} ${identity.lastName}`}
+          className="w-[22mm] h-[28mm] object-cover rounded-[1.2mm] flex-shrink-0"
+        />
       </header>
 
       {/* Contact + meta strip */}
