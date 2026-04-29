@@ -173,10 +173,10 @@ export default function Hero() {
               className="mt-6 flex flex-wrap items-center gap-4"
             >
               <a
-                href="#experience"
+                href="#profil"
                 className="inline-flex items-center gap-3 rounded-full bg-onyx text-bone px-6 py-3.5 text-[11px] uppercase tracking-[0.35em] hover:bg-onyx-deep transition"
               >
-                Découvrir le parcours
+                Découvrir
                 <span>→</span>
               </a>
               <a
