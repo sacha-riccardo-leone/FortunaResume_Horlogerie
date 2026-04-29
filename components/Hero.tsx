@@ -155,7 +155,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease }}
-              className="mt-10 max-w-xl text-lg text-graphite leading-[1.7]"
+              className="mt-5 max-w-xl text-lg text-graphite leading-[1.7]"
             >
               <span className="font-display text-onyx text-xl">
                 {identity.firstName} {identity.lastName}
@@ -170,7 +170,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="mt-12 flex flex-wrap items-center gap-4"
+              className="mt-6 flex flex-wrap items-center gap-4"
             >
               <a
                 href="#experience"
@@ -191,7 +191,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-platinum-line"
+              className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-5 border-t border-platinum-line"
             >
               {[
                 { k: "Depuis", v: identity.since },
