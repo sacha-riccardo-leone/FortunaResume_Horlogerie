@@ -128,14 +128,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.1, ease }}
-              className="relative w-full max-w-[520px] aspect-[4/5] overflow-hidden rounded-caseLg case-card"
+              className="relative w-full max-w-[300px] aspect-[4/5] overflow-hidden rounded-caseLg case-card"
             >
               <Image
                 src="/profile.jpeg"
                 alt={`${identity.firstName} ${identity.lastName}`}
                 fill
                 priority
-                sizes="(min-width: 1024px) 520px, 100vw"
+                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
                 className="object-cover"
               />
             </motion.div>
