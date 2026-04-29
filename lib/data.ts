@@ -23,7 +23,21 @@ export const resumeData = {
     country: "Suisse",
   },
   profile:
-    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Je maîtrise les gestes techniques de précision : assemblage de mouvements, huilage, pose et assemblage de bracelets, conditionnement et contrôle qualité (visitage). Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans une équipe où précision et qualité sont au cœur des priorités.",
+    "Opératrice en horlogerie formée en cours modulaire au Pôle Industrie du Locle et expérimentée au sein de Rolex SA. Rigoureuse, minutieuse et habituée aux exigences de production de la haute horlogerie suisse, je cherche à m’investir durablement dans une équipe où précision et qualité sont au cœur des priorités.",
+  narratives: [
+    {
+      place: "Pôle Industrie",
+      location: "Le Locle",
+      period: "2021",
+      text: "Tout commence au Pôle Industrie du Locle, en cours modulaire. Une école qui pose les fondations du métier : la précision du geste, la rigueur du protocole et la patience qu’exige le travail sur mouvement. L’ensemble des modules est validé par les formateurs à l’issue du cursus.",
+    },
+    {
+      place: "Rolex SA",
+      location: "Bienne",
+      period: "2022 — 2023",
+      text: "Puis vingt-quatre mois en manufacture chez Rolex SA, via Interima et Flexsis. Le module devient cadence, le geste s’inscrit dans une production exigeante. Un environnement qui affine la précision, consolide les standards de la haute horlogerie suisse et installe le travail dans la durée.",
+    },
+  ],
   experience: [
     {
       period: "2022 — 2023",
