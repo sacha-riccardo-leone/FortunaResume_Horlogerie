@@ -195,7 +195,7 @@ export default function Hero() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-graphite-faint mb-2">
                     {s.k}
                   </div>
-                  <div className="font-display text-base md:text-lg text-onyx">
+                  <div className="font-display text-base text-onyx whitespace-nowrap">
                     {s.v}
                   </div>
                 </div>
