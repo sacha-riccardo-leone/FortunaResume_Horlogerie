@@ -109,7 +109,7 @@ export const resumeData = {
     },
     {
       year: "2019",
-      title: "Certificat fédéral de capacité (CFC)\nd’assistante socio‑éducative",
+      title: "Certificat fédéral de capacité d’assistante socio‑éducative",
       school: "Saint-Blaise",
     },
   ],
