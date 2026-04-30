@@ -40,14 +40,9 @@ export default function Experience() {
                 </div>
 
                 <div className="md:col-span-9 p-8 md:p-12">
-                  <div className="flex items-baseline justify-between flex-wrap gap-4">
-                    <h3 className="font-display text-3xl md:text-4xl text-onyx leading-tight">
-                      {exp.role}
-                    </h3>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-graphite">
-                      №{String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
+                  <h3 className="font-display text-3xl md:text-4xl text-onyx leading-tight">
+                    {exp.role}
+                  </h3>
                   <p className="mt-2 text-graphite">
                     <span className="font-display text-onyx text-lg">{exp.company}</span>
                     {"via" in exp && exp.via ? (
@@ -61,7 +56,7 @@ export default function Experience() {
                     {exp.bullets.map((b, bi) => (
                       <li key={bi} className="flex text-graphite text-[15px] leading-relaxed">
                         <span className="mr-3 mt-2 h-1 w-1 rounded-full bg-onyx flex-none" aria-hidden />
-                        <span>{b}</span>
+                        <span className="whitespace-pre-line">{b}</span>
                       </li>
                     ))}
                   </ul>
@@ -70,7 +65,7 @@ export default function Experience() {
                       <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-graphite-faint mb-2">
                         Réalisation
                       </div>
-                      <p className="font-display text-lg text-onyx leading-snug">
+                      <p className="font-display text-lg text-onyx leading-snug whitespace-pre-line">
                         {exp.achievement}
                       </p>
                     </div>

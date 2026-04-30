@@ -55,7 +55,7 @@ export const resumeData = {
         "Coordination et communication quotidiennes avec l’équipe de production.",
       ],
       achievement:
-        "Intégration rapide aux équipes et adaptation efficace aux cadences exigeantes de la manufacture.",
+        "Intégration rapide aux équipes et adaptation efficace aux cadences exigeantes\nde la manufacture.",
     },
     {
       period: "2021",
@@ -69,10 +69,10 @@ export const resumeData = {
         "Assemblage mouvement : pose et assemblage de bracelet.",
         "Conditionnement : triage, vissage, enfilage.",
         "Pose d’applique et cours théoriques d’horlogerie.",
-        "Développement de la dextérité manuelle et du geste précis.",
+        "Développement de la dextérité manuelle\net du geste précis.",
       ],
       achievement:
-        "Acquisition de gestes techniques précis et validation de l’ensemble des modules par les formateurs.",
+        "Acquisition de gestes techniques précis et validation de l’ensemble des modules\npar les formateurs.",
     },
     {
       period: "2020",
@@ -83,21 +83,21 @@ export const resumeData = {
       summary:
         "Organisation du quotidien et activités éducatives auprès d’enfants, dans un cadre bienveillant.",
       bullets: [
-        "Animation d’activités adaptées et bienveillance au quotidien.",
-        "Gestion du temps, rigueur et sens des responsabilités.",
+        "Animation d’activités adaptées et\nbienveillance au quotidien.",
+        "Gestion du temps, rigueur et\nsens des responsabilités.",
       ],
     },
     {
       period: "2016 — 2019",
       duration: "3 ans",
-      role: "Assistante socio-éducative (apprentissage CFC)",
+      role: "CFC d’assistante socio-éducative",
       company: "Association L’Accueil",
       location: "Saint-Blaise",
       summary:
         "Accompagnement éducatif et coordination pluridisciplinaire : autonomie, organisation, gestion du stress.",
       bullets: [
-        "Accompagnement d’enfants et coordination en équipe pluridisciplinaire.",
-        "Développement de la gestion du stress, de l’autonomie et de l’organisation.",
+        "Accompagnement d’enfants et\ncoordination en équipe pluridisciplinaire.",
+        "Développement de la gestion du stress,\nde l’autonomie et de l’organisation.",
       ],
     },
   ],
@@ -109,7 +109,7 @@ export const resumeData = {
     },
     {
       year: "2019",
-      title: "Certificat fédéral de capacité (CFC) d’assistante socio-éducative",
+      title: "Certificat fédéral de capacité (CFC)\nd’assistante socio‑éducative",
       school: "Saint-Blaise",
     },
   ],

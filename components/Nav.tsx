@@ -53,8 +53,8 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="flex items-center gap-3"
             >
-              <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-onyx/30 bg-bone">
-                <span className="absolute inset-[3px] rounded-full border border-onyx/10" />
+              <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-onyx bg-bone">
+                <span className="absolute inset-[3px] rounded-full border border-onyx/40" />
                 <span className="relative font-display text-sm text-onyx">F</span>
               </span>
               <div className="hidden sm:block leading-tight">

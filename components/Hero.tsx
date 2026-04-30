@@ -211,7 +211,7 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.6, ease }}
               className="w-full text-center"
             >
-              <blockquote className="inline-block text-left italic font-display text-base md:text-lg text-graphite leading-[1.8]">
+              <blockquote className="inline-block text-left italic font-display font-bold text-base md:text-lg text-onyx leading-[1.8]">
                 <div>« Le geste.</div>
                 <div className="pl-10 md:pl-16">La précision.</div>
                 <div>Le temps. »</div>

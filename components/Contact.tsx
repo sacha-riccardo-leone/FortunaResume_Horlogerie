@@ -42,9 +42,11 @@ export default function Contact() {
             <span>professionnel.</span>
           </h2>
 
-          <p className="relative mt-6 max-w-2xl text-bone/70 leading-[1.8]">
+          <p className="relative mt-6 max-w-3xl text-bone/70 leading-[1.8]">
             Pour toute opportunité, réponse sous 48 heures. Disponibilité {identity.availability} ·{" "}
-            {contact.postal}, Suisse et environs.
+            {contact.postal},
+            <br />
+            Suisse et environs.
           </p>
 
           <div className="relative mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-bone/15">
