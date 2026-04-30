@@ -28,7 +28,7 @@ export default function Education() {
                   <div className="col-span-9 md:col-span-7 font-display text-lg md:text-xl text-onyx leading-snug whitespace-pre-line">
                     {e.title}
                   </div>
-                  <div className="col-span-12 md:col-span-3 font-mono text-[12px] text-graphite md:text-right">
+                  <div className="col-span-12 md:col-span-3 font-mono text-[12px] text-graphite md:text-right whitespace-pre-line">
                     {e.school}
                   </div>
                 </li>
