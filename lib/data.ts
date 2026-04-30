@@ -105,7 +105,7 @@ export const resumeData = {
     {
       year: "2021",
       title: "Attestation modulaire d’opératrice en horlogerie",
-      school: "Pôle Industrie,\nLe Locle",
+      school: "Le Locle",
     },
     {
       year: "2019",
