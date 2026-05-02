@@ -201,22 +201,21 @@ export default function Hero() {
                 </div>
               ))}
             </motion.div>
-          </div>
 
-          <div className="lg:col-span-5 order-1 lg:order-2 lg:-mt-14 flex flex-col items-center gap-8">
-            <Dial />
             <motion.figure
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.6, ease }}
-              className="w-full text-center"
+              transition={{ duration: 0.9, delay: 1, ease }}
+              className="mt-10 text-center"
             >
-              <blockquote className="inline-block text-left italic font-display font-bold text-base md:text-lg text-onyx leading-[1.8]">
-                <div>« Le geste.</div>
-                <div className="pl-10 md:pl-16">La précision.</div>
-                <div>Le temps. »</div>
+              <blockquote className="italic font-display font-light text-base md:text-lg text-graphite leading-relaxed">
+                « Le geste. La précision. Le temps. »
               </blockquote>
             </motion.figure>
+          </div>
+
+          <div className="lg:col-span-5 order-1 lg:order-2 lg:mt-[320px] flex flex-col items-center">
+            <Dial />
           </div>
         </div>
       </div>
