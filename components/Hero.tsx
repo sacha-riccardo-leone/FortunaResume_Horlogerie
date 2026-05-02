@@ -233,7 +233,7 @@ export default function Hero() {
           className="mt-20 md:mt-28 pt-12 md:pt-16 border-t border-platinum-line flex flex-col items-center gap-8"
         >
           <Dial />
-          <blockquote className="italic font-display font-light text-base md:text-lg text-graphite text-center max-w-md">
+          <blockquote className="italic font-display font-light uppercase tracking-[0.2em] text-base md:text-lg text-graphite text-center max-w-md">
             « Le geste. La précision. Le temps. »
           </blockquote>
         </motion.div>
