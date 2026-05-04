@@ -118,8 +118,8 @@ body {
    Print: A4 single-page resume layout
    ─────────────────────────────────────────────────────────────── */
 @page {
-  size: A4;
-  margin: 11mm 12mm;
+  size: A4 portrait;
+  margin: 10mm 11mm;
   /* Override browser defaults in @page margin boxes where supported.
      Browsers that don't honour these still get the canonical URL from
      the in-page footer. */
@@ -145,8 +145,28 @@ body {
   body {
     background: #ffffff !important;
     color: #0b0b0b !important;
+    width: 210mm;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  /* Force a single A4 page on every browser, including iOS Safari which
+     otherwise renders print 4–6% larger than desktop Chrome. */
+  .print-resume {
+    width: 188mm;            /* A4 width minus the @page horizontal margins */
+    max-height: 277mm;        /* A4 height minus the @page vertical margins */
+    overflow: hidden;
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-resume header,
+  .print-resume section,
+  .print-resume footer {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   /* No animations, transitions, or transforms while printing */

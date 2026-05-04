@@ -130,7 +130,7 @@ export default function Hero() {
       className="relative pt-32 sm:pt-36 md:pt-44 pb-20 sm:pb-24"
     >
       <h1 className="sr-only">
-        {identity.firstName} {identity.lastName} Ming Kan · {identity.role}
+        {identity.firstName} {identity.lastName} · {identity.role}
       </h1>
 
       <div className="mx-auto max-w-[1240px] px-5 sm:px-6 md:px-10 lg:px-14">
@@ -159,8 +159,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.15, ease }}
               className="font-display font-light text-display-lg text-onyx leading-[1.04]"
             >
-              {identity.firstName} {identity.lastName}{" "}
-              <span className="text-graphite">Ming Kan</span>
+              {identity.firstName} {identity.lastName}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
